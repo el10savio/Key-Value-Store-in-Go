@@ -51,10 +51,13 @@ func PUT(entry Entry) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	err = enc.Encode(entry.Value)
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	log.Println(buffer.Bytes())
 
 	err = db.AppendDbFile(file, buffer.Bytes())
 	if err != nil {
@@ -62,5 +65,17 @@ func PUT(entry Entry) {
 	}
 
 	log.Println("Succesful PUT for key:", entry.Key)
+
+}
+
+func GET(Key string) {
+
+	file, err := db.DbFile()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println("Succesful GET for key:", Key)
+	// log.Println("Value:", Value)
 
 }

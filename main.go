@@ -15,12 +15,6 @@ func main() {
 
 	kv.PUT(kv.Entry{"1af75d", []byte("test-string")})
 
-	kv.PUT(kv.Entry{"1af75d", []byte("test-string")})
-
-	kv.PUT(kv.Entry{"1af75d", []byte("test-string")})
-
-	kv.PUT(kv.Entry{"1af75d", []byte("test-string")})
-
-	kv.PUT(kv.Entry{"1af75d", []byte("test-string")})
+	kv.GET("1af75d")
 
 }
